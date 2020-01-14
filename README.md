@@ -1,1 +1,1 @@
-# study_python
+# 勉強用のPythonプログラム
