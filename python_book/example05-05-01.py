@@ -42,3 +42,7 @@ while True :
 
     print("ヒット" + str(hit))
     print("ブロー" + str(blow))
+
+    if hit == 4:
+        print("当たり！")
+        break
