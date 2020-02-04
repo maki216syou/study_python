@@ -13,7 +13,7 @@ def move():
     #今の円を消す
     canvas.create_oval(x - 20,y - 20,x + 20,y + 20,fill="white",width=0)
     # x座標を動かす
-    x = X + dx
+    x = x + dx
     # y座標も動かす
     y = y + dy
     #次の位置に円を描く
