@@ -28,11 +28,16 @@ class Ball:
             self.dy = 1
 
 #円をひとつ作る
-b = Ball(400, 300, 1, 1, "red")
+balls = [
+    Ball(400, 300, 1, 1, "red"),
+    Ball(200, 100, -1, 1, "green"),
+    Ball(100, 200, 1, -1, "blue")
+]
 
 def loop():
     #　動かす
-    b.move(canvas)
+    for ball in balls:
+        ball.move(canvas)
     # もう一回
     root.after(10,loop)
 

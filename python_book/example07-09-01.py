@@ -20,28 +20,28 @@ class Ball:
         if (self.x >= canvas.winfo_width()):
             self.dx = -1
         if (self.x <= 0):
-            self.dx = -1
+            self.dx = 1
         if (self.y >=canvas.winfo_height()):
             self.dy = -1
         if (self.y <= 0):
             self.dy = 1
 
     def erase(self, canvas):
-        canvas.create_oval(self.x - 20, self.y - 20, self.x + 20, self.y + 20, fill="white", width=0)
+        canvas.create_oval(self.x - 21, self.y - 21, self.x + 21, self.y + 21, fill="white", width=0)
 
     def draw(self, canvas):
         canvas.create_oval(self.x - 20, self.y - 20, self.x + 20, self.y + 20, fill=self.color,width=0)
 
 class Rectangle(Ball):
     def erase(self, canvas):
-        canvas.create_rectangle(self.x - 20, self.y - 20, self.x + 20, self.y + 20, fill="white", width=0)
+        canvas.create_rectangle(self.x - 21, self.y - 21, self.x + 21, self.y + 21, fill="white", width=0)
 
     def draw(self, canvas):
         canvas.create_rectangle(self.x - 20, self.y - 20,self.x + 20, self.y + 20, fill=self.color,width=0)
 
 class Triangle(Ball):
     def erase(self, canvas):
-        canvas.create_polygon(self.x, self.y - 20, self.x + 20, self.y + 20, self.x - 20, self.y + 20, fill="white",width=0)
+        canvas.create_polygon(self.x, self.y - 21, self.x + 21, self.y + 21, self.x - 21, self.y + 21, fill="white",width=0)
 
     def draw(self, canvas):
         canvas.create_polygon(self.x,self.y - 20, self.x + 20, self.y + 20, self.x - 20, self.y + 20, fill=self.color, width=0)
@@ -54,8 +54,8 @@ balls = [
 ]
 def loop():
     # 動かす
-    for b in balls:
-        b.move(canvas)
+    for ball in balls:
+        ball.move(canvas)
     # もう一回
     root.after(10,loop)
 
