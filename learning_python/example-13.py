@@ -51,4 +51,39 @@ print('some','value', sep='', end='\n', file=sys.stdout, flush=False)
 #In [16]
 print('some', 'value', sep='')
 
+#In [17]
+def myfunc(param1, param2, *args):
+    return f'param1: {param1}, param2: {param2}, other: {args}'
 
+#In [18]
+print(myfunc(1,2))
+print(myfunc(1,2,3))
+print(myfunc(1,2,3,4))
+
+def myfunc(param1, param2, *args):
+    tmp = f'param1: {param1}, param2: {param2}'
+    index = 3 
+    for item in args:
+        tmp += f', param{index}: {item}'
+        index += 1
+    return tmp
+
+print(myfunc(1, 2))
+print(myfunc(1, 2, 3))
+print(myfunc(1, 2, 3, 4))
+
+#In [23]:
+def myfunc(param1, **kwargs):
+    return f'param1: {param1}, others: {kwargs}'
+
+#In [24]:
+print(myfunc(param2='param2', param1=1,foo='foo'))
+
+#In [25]:
+def myfunc(param1, **kwargs):
+    tmp = f'param1: {param1}'
+    for item in kwargs.items():
+        tmp += f', {item[0]}: {item[1]}'
+    return tmp
+
+print(myfunc(param2='param2', param1=1, foo='foo'))
